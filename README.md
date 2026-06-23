@@ -26,14 +26,9 @@ Upstreamable fixes to the **DingusPPC** emulator (GPLv3) that gave it working se
 
 ## The wider Silicon Relics project
 
-These three are part of a larger body of cross-console work spanning several years and many platforms — an analog-horror ARG series and the homebrew/reverse-engineering that underpins it:
+These three are part of a larger, ongoing body of cross-console work — an analog-horror ARG series and the homebrew and reverse-engineering that underpins it, spanning many years and many forgotten machines. Which platforms, and in what order, is something the series leaves for players to discover.
 
-- **SR1** — mid-90s home consoles (Sega Saturn, 3DO, Amiga CD32, Atari Jaguar).
-- **SR2** — Sega Dreamcast, PlayStation 2, and HyperScan; includes world-first homebrew on the **Casio Loopy**.
-- **SR3 (Gaiden)** — forgotten handhelds (Neo Geo Pocket Color, Game.com, Atari Lynx, WonderSwan Color).
-- **SR4** — exploratory work on the Bandai Playdia, Tandy/Memorex VIS, Philips CD-i, and Bandai Pippin.
-
-The three repositories above are where that work is documented publicly first.
+The repositories above are where that technical work surfaces publicly first.
 
 ---
 
