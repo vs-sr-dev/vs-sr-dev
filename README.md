@@ -6,6 +6,8 @@ The goal is concrete: take technical knowledge that exists nowhere else — comp
 
 Everything below is either original code or documentation. **No repository here contains game assets, ROM data or copyrighted content** — the tools read media you already own.
 
+*Everything here is published as is. This is reverse-engineering work, not a specification: findings are revisited and corrected over time, but nothing in these repositories is guaranteed to be complete or correct, whether or not a given page says so. Where a claim can be checked mechanically, the repository ships the command that checks it — run that rather than trusting the prose.*
+
 ---
 
 ## 🕹️ Homebrew
