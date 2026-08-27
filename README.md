@@ -75,6 +75,7 @@ Format archaeology: containers, sprite codecs, map formats, text systems, and th
 | [**pc-fftype0-doc**](https://github.com/vs-sr-dev/pc-fftype0-doc) | *FINAL FANTASY TYPE-0 HD* — PSP heritage and the HexaDrive render layer |
 | [**pc-talesofberseria-doc**](https://github.com/vs-sr-dev/pc-talesofberseria-doc) | *Tales of Berseria* (2017) — container format and obfuscation |
 | [**pc-infiniteundiscovery**](https://github.com/vs-sr-dev/pc-infiniteundiscovery) | *Infinite Undiscovery* (tri-Ace, Xbox 360) and the ASKA engine |
+| [**android-talesofcrestoria-doc**](https://github.com/vs-sr-dev/android-talesofcrestoria-doc) | *Tales of Crestoria* (Bandai Namco, 2020) — a dead gacha running on tri-Ace's **ASKA**, twelve years after the Xbox 360: the same `SLZ` container with Zstandard bolted on, the same texture header field-for-field in little-endian, Direct3D 9 shader profiles still sitting inside a GLES3 cache — and a shipped native library with 99.7% of its code zeroed out |
 | [**wii-thelaststory-re**](https://github.com/vs-sr-dev/wii-thelaststory-re) | *The Last Story* (Wii) and the LastWorld engine |
 | [**snes-rudranohihou-re**](https://github.com/vs-sr-dev/snes-rudranohihou-re) | *Rudra no Hihou* (SNES, Square) — the Japanese text system |
 
