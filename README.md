@@ -65,6 +65,7 @@ Format archaeology: containers, sprite codecs, map formats, text systems, and th
 | [**pc-meridian59-doc**](https://github.com/vs-sr-dev/pc-meridian59-doc) | *Meridian 59* (1996), one of the first graphical MMORPGs — and 30 years of operational strata |
 | [**pc-dungeonhack-doc**](https://github.com/vs-sr-dev/pc-dungeonhack-doc) | *Forgotten Realms: Dungeon Hack* (1993) and the AESOP/16 engine |
 | [**pc-wackywheels-doc**](https://github.com/vs-sr-dev/pc-wackywheels-doc) | *Wacky Wheels* (Apogee, 1994) and its fixed-point pseudo-3D floor renderer |
+| [**pc-battlebugs-doc**](https://github.com/vs-sr-dev/pc-battlebugs-doc) | *Battle Bugs* (Sierra/Epyx, 1994) — 16-colour planar art at 800x600, and one asset set serving two resolutions |
 | [**pc-mm-doc**](https://github.com/vs-sr-dev/pc-mm-doc) | *Might & Magic: Secret of the Inner Sanctum* (1987) |
 | [**pc-grandiahd-doc**](https://github.com/vs-sr-dev/pc-grandiahd-doc) | *GRANDIA HD Remaster* — the PSX GPU/SPU/CD libraries reimplemented on D3D11/XAudio2 |
 | [**pc-secretofmana-doc**](https://github.com/vs-sr-dev/pc-secretofmana-doc) | *Secret of Mana* (2018 PC remake), a PhyreEngine title |
