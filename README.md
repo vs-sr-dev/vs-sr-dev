@@ -1,6 +1,6 @@
 # Silicon Relics
 
-Homebrew, ports and preservation research for **obscure and failed vintage platforms** — the machines that flopped, got cancelled, or were never documented, and so have almost no public technical record.
+Homebrew, ports and preservation research for **obscure and failed vintage platforms** — the machines that flopped, got cancelled, or were never documented, and so have almost no public technical record — and native PC ports of console games that never left their console.
 
 The goal is concrete: take technical knowledge that exists nowhere else — compiler bugs, hardware register maps, undocumented file formats, emulator internals — and make it **publicly verifiable** for the people who come after. For several of these platforms, these repositories are the only public documentation of their kind.
 
@@ -24,26 +24,67 @@ Original software, written from scratch for the target hardware.
 
 The Channel F is the constraint that best explains the appeal: a 1976 console with **64 bytes** of system RAM, and two complete games written into it.
 
+## ⚙️ Static recompilation
+
+Console games brought to PC by translating their own machine code to C++ ahead of time and running it natively, with a runtime that stands in for the console's hardware. No emulator underneath and no source code needed: the game's code is the game's code, compiled for a different machine.
+
+The work that every game on a console shares — its discs, its CPU, its graphics and sound hardware, its SDK — lives in a game-agnostic toolkit per console. Each toolkit grows inside the ports: a piece is written because a game needed it, then kept free of that game's knowledge.
+
+| Toolkit | Console | What it replaces |
+|---|---|---|
+| [**wiikit**](https://github.com/vs-sr-dev/wiikit) | Wii and GameCube | Gekko → C++ recompiler; IOS, the GX GPU, the DSP's AX mixer, the Remote and its extensions, the GameCube's ARAM and controllers |
+| [**saturnkit**](https://github.com/vs-sr-dev/saturnkit) | Sega Saturn | SH-2 → C++ recompiler; both SH-2s, VDP1 and VDP2, the SCU and its DSP, the CD block, the 68000 and SCSP |
+| [**ps2kit**](https://github.com/vs-sr-dev/pc-extermination/tree/main/ps2kit) | PlayStation 2 | Disc, format and executable tooling beside PS2Recomp; still inside its first port, published on its own once a second game uses it |
+
+| Port | Game | Built on |
+|---|---|---|
+| [**pc-victorious**](https://github.com/vs-sr-dev/pc-victorious) | *Victorious: Taking the Lead* (Wii, 2012) | wiikit, born here |
+| [**pc-dragonquestswords**](https://github.com/vs-sr-dev/pc-dragonquestswords) | *Dragon Quest Swords* (Wii, 2007) | wiikit |
+| [**pc-arcrisefantasia**](https://github.com/vs-sr-dev/pc-arcrisefantasia) | *Arc Rise Fantasia* (Wii, 2009) | wiikit |
+| [**pc-monsterhunter3**](https://github.com/vs-sr-dev/pc-monsterhunter3) | *Monster Hunter Tri* (Wii, 2009) | wiikit |
+| [**pc-finalfantasycrystalbearers**](https://github.com/vs-sr-dev/pc-finalfantasycrystalbearers) | *Final Fantasy Crystal Chronicles: The Crystal Bearers* (Wii, 2009) | wiikit |
+| [**pc-thelaststory**](https://github.com/vs-sr-dev/pc-thelaststory) | *The Last Story* (Wii, 2011) | wiikit |
+| [**pc-conduit2**](https://github.com/vs-sr-dev/pc-conduit2) | *Conduit 2* (Wii, 2011) | wiikit |
+| [**pc-megamanxcm**](https://github.com/vs-sr-dev/pc-megamanxcm) | *Mega Man X: Command Mission* (GameCube, 2004) | wiikit |
+| [**pc-virtualhydlide**](https://github.com/vs-sr-dev/pc-virtualhydlide) | *Virtual Hydlide* (Saturn, 1995) | saturnkit, born here |
+| [**pc-deepfear**](https://github.com/vs-sr-dev/pc-deepfear) | *Deep Fear* (Saturn, 1998) | saturnkit |
+| [**pc-extermination**](https://github.com/vs-sr-dev/pc-extermination) | *Extermination* (PS2, 2001) | PS2Recomp and ps2kit |
+| [**pc-mikie**](https://github.com/vs-sr-dev/pc-mikie) | Konami's *Mikie* (arcade, 1984) | its own MC6809 → C recompiler (the sound board's Z80 emulated), verified instruction by instruction against MAME |
+
+Where each one stands is at the top of its README, and in a [`.recomp.json`](https://recomp.fyi/spec) at its root that [recomp.board](https://recomp.fyi) reads.
+
 ## 🔀 Ports & reimplementations
 
-Existing games brought to hardware they were never meant to run on, or rebuilt natively.
+### To other consoles
+
+Games built from their released source for hardware they were never meant to run on.
 
 | Repo | Target | Source |
 |---|---|---|
 | [**psx-lba**](https://github.com/vs-sr-dev/psx-lba) | PlayStation | *Little Big Adventure* (1994 DOS engine), at native 640×480 |
 | [**ds-lba**](https://github.com/vs-sr-dev/ds-lba) | Nintendo DS | *Little Big Adventure* — 50 fps on a stock 4 MB DS, with voices, streamed music and a touch panel |
-| [**wiiu-lba2**](https://github.com/vs-sr-dev/wiiu-lba2) | Wii U | *LBA2 / Twinsen's Odyssey* from the 1997 Adeline source — completed start-to-finish on real hardware |
-| [**dc-lba2**](https://github.com/vs-sr-dev/dc-lba2) | Dreamcast | *LBA2* on KallistiOS — v0.9 alpha, real-hardware boot blocker still open |
+| [**jag-lba**](https://github.com/vs-sr-dev/jag-lba) | Atari Jaguar | *Little Big Adventure* at 640×480 interlaced, 3D bodies on the GPU |
+| [**hs-lba**](https://github.com/vs-sr-dev/hs-lba) | Mattel HyperScan | *Little Big Adventure* on an S+core 7, from a servo-driven CD, saving 96 bytes to an RFID card |
+| [**wiiu-lba2**](https://github.com/vs-sr-dev/wiiu-lba2) | Wii U | *LBA2 / Twinsen's Odyssey* from the 1997 Adeline source — completed start to finish on real hardware |
+| [**n64-lba2**](https://github.com/vs-sr-dev/n64-lba2) | Nintendo 64 | *LBA2* on libdragon, its data (movies aside) in a 64 MB cartridge |
+| [**dc-lba2**](https://github.com/vs-sr-dev/dc-lba2) | Dreamcast | *LBA2* on KallistiOS, with VMU saves |
 | [**wiiu-planetblupi**](https://github.com/vs-sr-dev/wiiu-planetblupi) | Wii U | *Planet Blupi* (Epsitec) — GamePad touch as mouse, runs on Aroma |
 | [**vis-wolf3d**](https://github.com/vs-sr-dev/vis-wolf3d) | Tandy/Memorex VIS | *Wolfenstein 3D*, Win16 native, OPL3 audio |
 | [**3do-omf2097**](https://github.com/vs-sr-dev/3do-omf2097) | Panasonic 3DO | *One Must Fall: 2097*, built on OpenOMF |
-| [**pc-mikie**](https://github.com/vs-sr-dev/pc-mikie) | portable C | Konami's *Mikie* (1984) statically recompiled from MC6809, verified instruction-by-instruction against MAME |
-| [**pc-highlander**](https://github.com/vs-sr-dev/pc-highlander) | PC | *Highlander: The Last of the MacLeods* (Jaguar CD, 1995) — native reimplementation |
-| [**pc-rpgmaker3**](https://github.com/vs-sr-dev/pc-rpgmaker3) | PC | The *RPG Maker 3* (PS2) engine — native reimplementation |
-| [**pc-immercenary**](https://github.com/vs-sr-dev/pc-immercenary) | PC | *Immercenary* (3DO, 1995) — tooling and docs, port in progress |
-| [**pc-ragnarokodysseyace**](https://github.com/vs-sr-dev/pc-ragnarokodysseyace) | PC | *Ragnarok Odyssey ACE* (PS3) — tooling and docs, port in progress |
+| [**coleco-ff**](https://github.com/vs-sr-dev/coleco-ff) | ColecoVision | *Final Fantasy* (NES, 1987) rewritten in C, on the Super Game Module and a 512 KB MegaCart |
 
-All ports are **BYOA** — bring your own assets. They need a copy of the game you already own.
+### Native reimplementations
+
+Engines rebuilt for PC from their file formats and their behaviour.
+
+| Repo | Game | State |
+|---|---|---|
+| [**pc-highlander**](https://github.com/vs-sr-dev/pc-highlander) | *Highlander: The Last of the MacLeods* (Jaguar CD, 1995) | engine reimplementation |
+| [**pc-rpgmaker3**](https://github.com/vs-sr-dev/pc-rpgmaker3) | The *RPG Maker 3* engine (PS2, 2005) | formats and tools |
+| [**pc-immercenary**](https://github.com/vs-sr-dev/pc-immercenary) | *Immercenary* (3DO, 1995) | formats and tools |
+| [**pc-ragnarokodysseyace**](https://github.com/vs-sr-dev/pc-ragnarokodysseyace) | *Ragnarok Odyssey ACE* (PS3) | formats and tools |
+
+All ports, recompiled or rebuilt, are **BYOA** — bring your own assets. They need a copy of the game you already own.
 
 ## 📖 Documentation & reverse engineering
 
@@ -61,26 +102,28 @@ Three platforms with essentially no prior public reverse-engineering record.
 
 Format archaeology: containers, sprite codecs, map formats, text systems, and the strata a shipped build accidentally preserves. Each repository carries machine-checkable verification commands, not just prose — the claims can be re-run against the files years from now.
 
-The largest families are now indexed rather than listed: each index repository holds the per-title write-ups verbatim, and links to the shared platform notes so there is only ever one copy of a finding. Counts are kept in the indices, never here. Everything below is reachable from this page in at most two hops.
+The larger families are indexed rather than listed: each index repository links one write-up per title, and the shared platform notes hold each finding once. Counts are kept in the indices, never here. Everything below is reachable from this page in at most two hops.
 
-Some families are indexed **before** having any titles in them, so that the first disc has a structure to be filed into and a set of questions to be measured against rather than a blank page. Those checklists mark every claim by where it came from and never promote a mark because nothing contradicted it — the 3DO and Dreamcast ones are `[unverified]` throughout, meaning public documentation rather than a disc that was opened, while the VIS one separates what was measured on retail pressings from what was proven by writing code that runs on the machine. Each says which it is at the top, and an empty table there is empty on purpose.
+Some indices were created **before** their first title, so that the first disc had a structure to be filed into and a set of questions to be measured against. Their checklists mark every claim by where it came from — a disc that was opened, code that runs on the machine, or public documentation only — and never promote a mark because nothing contradicted it.
 
 | Repo | Subject |
 |---|---|
-| [**cd32-gamelist-doc**](https://github.com/vs-sr-dev/cd32-gamelist-doc) | **Index of the Amiga CD32 / CDTV disc documentation** — one repository per pressing, each carrying the full write-up that used to sit in this table. What the family has produced is measurement where there was folklore: the `.TM` block pinned to a file rather than to a fixed sector, several timestamp epochs to tell apart, a shelf of Amiga crunchers including one wearing another's magic bytes, and a floppy-port-versus-CD32-first compression rule proved as a controlled experiment rather than a correlation. The disc count and the side-by-side baselines are one click away |
-| [**cd32-platformnotes-doc**](https://github.com/vs-sr-dev/cd32-platformnotes-doc) | **The shared Amiga CD32 / CDTV platform checklist** the discs in the index feed into, so later Amiga CD pipelines extend one copy instead of forking it — disc identification (the system identifier of a CD32 game reads **`CDTV`**), the **`.TM` block that belongs to no file**, is pointed at only by a field in the volume descriptor, is **not always at sector 21 and not always 2,048 bytes**, is required for the disc to boot at all, shipped to developers as a file (`CD32.TM`, `CDTV.TM`) and holds **whatever that file was — not what the console was**, three claims here that later discs **falsified and that are corrected in place**, RNC ProPack, the Imploder *and* Bytekiller with the argument for lifting a decruncher out of the loader rather than trusting a format description — and the correction that **a scan finding no compression magic proves nothing**, the AmigaDOS epoch hiding a build log in the directory timestamps, the two greps that say whether a loader touches the OS at all, RNC ProPack method 1 with the bit-reader detail that makes it self-checking, hunk executables, copper lists and interleaved planar bitmaps, and the encodings not to assume |
-| [**cdi-gamelist-doc**](https://github.com/vs-sr-dev/cdi-gamelist-doc) | **Index of the Philips CD-i disc documentation** — one repository per disc, each carrying the full write-up that used to sit in this table. The discs bracket the format instead of agreeing on it: one is 2.4 % full and compresses nothing, another is 98 % full with 52 sectors of file system, a CD-i Ready title hides entirely in the 69,150-sector pregap of track 1, and two retail builds shipped their own symbol tables. Shared findings live in the checklist below |
-| [**cdi-platformnotes-doc**](https://github.com/vs-sr-dev/cdi-platformnotes-doc) | **The shared CD-i platform checklist** the discs in the index feed into, rather than each forking a copy — sector and Green Book layouts, OS-9 module validation, coding bytes, DYUV, real-time interleave, and the 29 seconds of authoring-system audio that turns up **byte-identical** on three unrelated discs, two from 1993 and one from 1995 |
-| [**tales-gamelist-doc**](https://github.com/vs-sr-dev/tales-gamelist-doc) | **Index of the *Tales* series documentation** — one repository per title, spanning cartridges, discs, a keitai i-appli and a phone gacha, each carrying the full write-up that used to sit in this table. This is the one index organised **by saga rather than by platform**, because the shared thing — Wolf Team's in-house LZSS — belongs to the series and not to any one machine: no platform except PC carries enough *Tales* to hold an index of its own. The codec itself is the repository below |
-| [**tales-blockcodec-doc**](https://github.com/vs-sr-dev/tales-blockcodec-doc) | **The shared *Tales* block codec** the carts and discs feed into, rather than each forking a copy — Wolf Team's in-house LZSS, carried from the Super Famicom across every console generation since, with a reference decoder, per-title lineage reports and the identity tests that decide whether two builds share code or only share a format. Its long-form write-up moved to [tales-gamelist-doc](https://github.com/vs-sr-dev/tales-gamelist-doc) with the rest of the series |
-| [**pc-gamelist-doc**](https://github.com/vs-sr-dev/pc-gamelist-doc) | **Index of the PC and portable-C game documentation** — one repository per title, each carrying the full write-up that used to sit in this table. Two strands run through it: DOS-era format archaeology — containers, sprite codecs, map formats, and the editor work files that shipped by accident — and modern remasters and PC ports, where the interesting layer is the older console the build is still pretending to be. No shared platform checklist here: this family has the machine in common and almost nothing else |
-| [**3do-gamelist-doc**](https://github.com/vs-sr-dev/3do-gamelist-doc) | **Index of the 3DO disc documentation** — one repository per pressing. **Empty so far**: the index and its checklist were created before the first disc rather than out of it, so that the first pipeline has somewhere to be filed and a set of questions to be measured against. The platform is the odd one out among the optical families here — it does not use ISO 9660 at all, but the 3DO's own Opera file system, big-endian on an ARM6, with what appears to be a per-file list of duplicate block locations in the directory record itself |
-| [**3do-platformnotes-doc**](https://github.com/vs-sr-dev/3do-platformnotes-doc) | **The shared 3DO platform checklist** discs will feed into — the volume label at sector 0, the Opera directory hierarchy, `LaunchMe` and ARM6 big-endian code, CELs and Cel Control Blocks, SDX2 audio and the Data Streamer. **A scaffold, and it says so on every line**: every claim carries the mark `[unverified]`, meaning it came from public documentation rather than from a disc that was opened, and the first pipeline converts each one into a measurement, a correction with the wrong version left visible, or a deletion. What is already real is the set of questions — *does anything use the CEL engine?*, *what is in the sectors that belong to no file?*, *is any asset pressed byte-identical on unrelated discs?* — carried over from the two families that answered them |
-| [**dc-gamelist-doc**](https://github.com/vs-sr-dev/dc-gamelist-doc) | **Index of the Dreamcast disc documentation** — one repository per pressing. **Empty so far**, and created before the first disc for the same reason as the 3DO index. The platform brings a problem the others do not: it is the best-documented machine in this collection by a wide margin, so the risk is not finding an answer but inheriting one — and inherited fact is exactly what the Amiga CD and CD-i checklists exist to falsify |
-| [**dc-platformnotes-doc**](https://github.com/vs-sr-dev/dc-platformnotes-doc) | **The shared Dreamcast platform checklist** discs will feed into — GD-ROM's two areas and what each dump form throws away, `IP.BIN` in front of the file system, the ISO 9660 volume behind it, the **scrambled** SH-4 executable, the middleware most of the content actually belongs to, PowerVR textures, and the ARM7 sound program that is a second binary in a second instruction set on the same disc. **A scaffold**, marked `[unverified]` throughout on the same terms as the 3DO one. Its open questions are where a cross-disc result would come from: how many generations of the `IP.BIN` bootstrap there are, whether the ARM7 driver is shared between unrelated studios, and how much of a typical disc is dummy padding — which is to say how much every published capacity figure for this platform is off by |
-| [**vis-gamelist-doc**](https://github.com/vs-sr-dev/vis-gamelist-doc) | **Index of the Tandy / Memorex VIS disc documentation** — one repository per pressing. **No title documented yet**, but unlike the two indices above it does not start from nothing: three retail pressings are in hand and their `CONTROL.TAT` blocks have already been compared. The name is generous and the repository says so — the VIS library is largely reference and educational discs, and two of the three in hand are an atlas and a fitness programme. Also links the three homebrew projects the platform knowledge came from, because that provenance should be visible rather than implicit |
-| [**vis-platformnotes-doc**](https://github.com/vs-sr-dev/vis-platformnotes-doc) | **The shared Tandy / Memorex VIS platform checklist** — and the one that starts from the opposite end, because here **the machine is partly known and its discs are not**. Three years of homebrew on this console measured its timers, its audio, its display path and its input without ever opening a retail disc, so the document keeps **three marks instead of one**: `[N of 3]` for retail pressings, `[authoring]` for what was proven by writing code that runs on the machine, and `[unverified]` for what is only in the Tandy SDK — and never promotes one to another. Section 2 is already measured on all three discs in hand: the leading **84 bytes of `CONTROL.TAT` are byte-identical** across three unrelated studios, the file **names and dates the Tandy tool that pressed it** — two builds of `Maketat`, six weeks apart, are already visible — and its title field carries the leftovers, including a **retail pressing of *Bible Lands* that still calls itself a prototype demo** and a *Fitness Partner* that shipped as `V.90`. Two `[authoring]` corrections are recorded in place with the wrong version left visible: a **PCM DAC these notes had recorded as absent**, and a display flag read as `NOWAIT` for a whole session that was `STRETCH 2X` all along |
-| [**wii-thelaststory-re**](https://github.com/vs-sr-dev/wii-thelaststory-re) | *The Last Story* (Wii) and the LastWorld engine |
+| [**cd32-gamelist-doc**](https://github.com/vs-sr-dev/cd32-gamelist-doc) | **Index of the Amiga CD32 / CDTV disc documentation**, one repository per pressing. Measurement where there was folklore: the `.TM` block pinned to a file rather than to a fixed sector, several timestamp epochs told apart, a cruncher wearing another's magic bytes |
+| [**cd32-platformnotes-doc**](https://github.com/vs-sr-dev/cd32-platformnotes-doc) | **The shared Amiga CD32 / CDTV platform checklist** — the system identifier of a CD32 game reads **`CDTV`**, the **`.TM` block belongs to no file** and is not always at sector 21, and the claims later discs falsified are corrected in place |
+| [**cdi-gamelist-doc**](https://github.com/vs-sr-dev/cdi-gamelist-doc) | **Index of the Philips CD-i disc documentation**. The discs bracket the format instead of agreeing on it: one is 2.4 % full, another 98 %, a CD-i Ready title hides entirely in the pregap of track 1, and two retail builds shipped their own symbol tables |
+| [**cdi-platformnotes-doc**](https://github.com/vs-sr-dev/cdi-platformnotes-doc) | **The shared CD-i platform checklist** — Green Book layouts, OS-9 modules, DYUV, real-time interleave, and 29 seconds of authoring-system audio found **byte-identical** on three unrelated discs |
+| [**3do-gamelist-doc**](https://github.com/vs-sr-dev/3do-gamelist-doc) | **Index of the 3DO disc documentation** — the odd one out among the optical families: no ISO 9660, but the 3DO's own Opera file system, big-endian on an ARM6 |
+| [**3do-platformnotes-doc**](https://github.com/vs-sr-dev/3do-platformnotes-doc) | **The shared 3DO platform checklist** — begun as a scaffold of `[unverified]` claims from public documentation; each disc converts them into measurements, or into corrections with the wrong version left visible |
+| [**dc-gamelist-doc**](https://github.com/vs-sr-dev/dc-gamelist-doc) | **Index of the Dreamcast disc documentation** — the best-documented machine here, so the risk is inheriting an answer rather than not finding one. The first retail disc falsified the line its checklist called most important |
+| [**dc-platformnotes-doc**](https://github.com/vs-sr-dev/dc-platformnotes-doc) | **The shared Dreamcast platform checklist** — GD-ROM's two areas, `IP.BIN`, the SH-4 executable scrambled or not, and the ARM7 sound program: a second binary in a second instruction set on the same disc |
+| [**vis-gamelist-doc**](https://github.com/vs-sr-dev/vis-gamelist-doc) | **Index of the Tandy / Memorex VIS disc documentation** — "game" being generous for a library of reference and educational discs. Also links the homebrew the platform knowledge came from |
+| [**vis-platformnotes-doc**](https://github.com/vs-sr-dev/vis-platformnotes-doc) | **The shared VIS platform checklist**, which starts from the opposite end: the machine was known from homebrew before any retail disc was opened, so it keeps retail, `[authoring]` and `[unverified]` marks apart. The leading **84 bytes of `CONTROL.TAT` are byte-identical** across unrelated studios |
+| [**tales-gamelist-doc**](https://github.com/vs-sr-dev/tales-gamelist-doc) | **Index of the *Tales* series documentation** — the one index organised **by saga rather than by platform**, from cartridges and discs to a keitai i-appli and a phone gacha |
+| [**tales-blockcodec-doc**](https://github.com/vs-sr-dev/tales-blockcodec-doc) | **The shared *Tales* block codec** — Wolf Team's in-house LZSS, carried from the Super Famicom across every console generation since, with a reference decoder and the tests that tell shared code from a shared format |
+| [**pc-gamelist-doc**](https://github.com/vs-sr-dev/pc-gamelist-doc) | **Index of the PC and portable-C game documentation** — DOS-era format archaeology, and modern remasters where the interesting layer is the older console the build is still pretending to be |
+| [**dos-platformnotes-doc**](https://github.com/vs-sr-dev/dos-platformnotes-doc) | **A checklist for the MS-DOS-era subset** of the PC family, which as a whole has none — whether the subset has enough in common is answered by a sweep of the finished repositories, not by opinion |
+| [**pc-infiniteundiscovery**](https://github.com/vs-sr-dev/pc-infiniteundiscovery) | *Infinite Undiscovery* (Xbox 360) and tri-Ace's ASKA engine |
+| [**wii-thelaststory-re**](https://github.com/vs-sr-dev/wii-thelaststory-re) | *The Last Story* (Wii) and the LastWorld engine — the format notes that came before [pc-thelaststory](https://github.com/vs-sr-dev/pc-thelaststory) |
 | [**snes-rudranohihou-re**](https://github.com/vs-sr-dev/snes-rudranohihou-re) | *Rudra no Hihou* (SNES, Square) — the Japanese text system |
 
 ## 🧰 Also
@@ -95,9 +138,9 @@ Some families are indexed **before** having any titles in them, so that the firs
 
 ## Reading the repository names
 
-`<platform>-<subject>`, where the platform is the **target**, not the origin. So [`psx-lba`](https://github.com/vs-sr-dev/psx-lba) is Little Big Adventure *running on* PlayStation, and [`pc-mikie`](https://github.com/vs-sr-dev/pc-mikie) is an arcade game *brought to* PC.
+`<platform>-<subject>`, where the platform is the **target**, not the origin. So [`psx-lba`](https://github.com/vs-sr-dev/psx-lba) is Little Big Adventure *running on* PlayStation, and [`pc-victorious`](https://github.com/vs-sr-dev/pc-victorious) is a Wii game *brought to* PC.
 
-Two suffixes narrow it further: **`-doc`** is documentation only, and **`-re`** is a reverse-engineering devlog. Anything without a suffix ships runnable code.
+Two suffixes narrow it further: **`-doc`** is documentation only, and **`-re`** is a reverse-engineering devlog. Anything without a suffix ships runnable code. A **`-kit`** is a game-agnostic toolkit, named after the console it stands in for.
 
 ## The wider Silicon Relics project
 
