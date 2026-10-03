@@ -157,3 +157,5 @@ This is a human + LLM collaboration, stated openly because the honesty is the po
 I'm a professional technical translator, a field heavily affected by AI, and I hold a deliberate position about it: AI used for **net-new work that displaces no one** — reverse-engineering an abandoned console that nobody else was working on — is the case worth defending. Visibility of the collaboration is part of that argument, not a disclaimer.
 
 — **[@vs-sr-dev](https://github.com/vs-sr-dev)**
+
+<sub>If this work is useful to you, you can support the research on [Ko-fi](https://ko-fi.com/samuelevoltan).</sub>
