@@ -130,6 +130,8 @@ Some indices were created **before** their first title, so that the first disc h
 
 | Repo | What it is |
 |---|---|
+| [**undertow**](https://github.com/vs-sr-dev/undertow) | Emulator for the **ZAPiT Game Wave** (2005), the Canadian DVD-based console — runs each disc's own Lua 5.0.2 bytecode and reimplements the ZIT engine around it, MPEG-2 movies included. No firmware needed |
+| [**ecliptic**](https://github.com/vs-sr-dev/ecliptic) | Emulator for the **Tapwave Zodiac** (2003), the Palm OS 5 handheld game console — Tapwave Native Applications on Unicorn, the 612-entry `TwGlue` OS table on the host. To our knowledge the first for the device |
 | [**chiproll**](https://github.com/vs-sr-dev/chiproll) | Browser piano roll for chip music — NES, Atari TIA and POKEY. No install, no build, no server |
 | [**pc-mediacatalog**](https://github.com/vs-sr-dev/pc-mediacatalog) | .NET 8 / WPF media cataloguer — perceptual-fingerprint duplicate detection across re-encodes |
 | [**silicon-relics**](https://github.com/vs-sr-dev/silicon-relics) | The wider Silicon Relics codex — a showcase site covering work beyond what is published here |
