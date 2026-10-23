@@ -4,6 +4,8 @@ Homebrew, ports and preservation research for **obscure and failed vintage platf
 
 The goal is concrete: take technical knowledge that exists nowhere else — compiler bugs, hardware register maps, undocumented file formats, emulator internals — and make it **publicly verifiable** for the people who come after. For several of these platforms, these repositories are the only public documentation of their kind.
 
+All of it is passion work, done in my spare time and on a schedule of my own. If there is something you would like me to work on in particular — a game, a platform, a toolkit — feel free to [open an issue](https://github.com/vs-sr-dev/vs-sr-dev/issues) here and ask.
+
 Everything below is either original code or documentation. **No repository here contains game assets, ROM data or copyrighted content** — the tools read media you already own.
 
 *Everything here is published as is. This is reverse-engineering work, not a specification: findings are revisited and corrected over time, but nothing in these repositories is guaranteed to be complete or correct, whether or not a given page says so. Where a claim can be checked mechanically, the repository ships the command that checks it — run that rather than trusting the prose. Anything you build, run, flash or burn from these repositories you do at your own risk: to the fullest extent permitted by law, I accept no liability for any damage or loss — to hardware, software, data or anything else — arising from the use of anything hosted on this account.*
@@ -26,8 +28,9 @@ The work that every game on a console shares — its discs or cartridges, its CP
 | [**wiikit**](https://github.com/vs-sr-dev/wiikit) | Wii and GameCube | Gekko → C++ recompiler; IOS, the GX GPU, the DSP's AX mixer, the Remote and its extensions, the GameCube's ARAM and controllers |
 | [**saturnkit**](https://github.com/vs-sr-dev/saturnkit) | Sega Saturn | SH-2 → C++ recompiler; both SH-2s, VDP1 and VDP2, the SCU and its DSP, the CD block, the 68000 and SCSP |
 | [**ndskit**](https://github.com/vs-sr-dev/ndskit) | Nintendo DS | ARM/Thumb → C++ recompiler, programs and overlays; both ARM CPUs, the 2D engines and the 3D engine (on OpenGL, at any resolution), the sound unit |
-| [**3dokit**](https://github.com/vs-sr-dev/3dokit) | Panasonic 3DO | ARM60 → C++ recompiler; a reimplementation of the Portfolio OS that answers every call the way the console's own OS does — kernel, folios, the cel engine, the DSP, DataStream and Cinepak, the drive |
-| [**ps2kit**](https://github.com/vs-sr-dev/pc-extermination/tree/main/ps2kit) | PlayStation 2 | Disc, format and executable tooling beside PS2Recomp; still inside its first port, published on its own once a second game uses it |
+| [**3dokit**](https://github.com/vs-sr-dev/3dokit) | Panasonic 3DO | ARM60 → C++ recompiler; a reimplementation of the Portfolio OS that answers every call the way the console's own OS does — kernel, folios, the cel engine, the DSP, DataStream and Cinepak, the drive, the pad and the light gun |
+| [**ps2kit**](https://github.com/vs-sr-dev/ps2kit) | PlayStation 2 | EE → C++ recompiler; the EE kernel, the IOP (its own modules run unchanged), the SPU2, the IPU, VIF and both VUs, the GS |
+| [**fmtownskit**](https://github.com/vs-sr-dev/fmtownskit) | FM Towns and FM Towns Marty | 386 → C++ recompiler; RUN386 and its Phar Lap executables, DOS, the TBIOS (from the disc, its modules laid out as at boot), the CD BIOS, the sprite controller, the RF5C68 and YM3438 sound, the pad and the mouse — one kit for both machines |
 
 Two toolkits go further and take a **whole library** at once — every cartridge recompiled, built, and run frame for frame identical to the interpreter:
 
@@ -47,6 +50,8 @@ Two toolkits go further and take a **whole library** at once — every cartridge
 | [**pc-finalfantasycrystalbearers**](https://github.com/vs-sr-dev/pc-finalfantasycrystalbearers) | *Final Fantasy Crystal Chronicles: The Crystal Bearers* (Wii, 2009) | wiikit |
 | [**pc-thelaststory**](https://github.com/vs-sr-dev/pc-thelaststory) | *The Last Story* (Wii, 2011) | wiikit |
 | [**pc-conduit2**](https://github.com/vs-sr-dev/pc-conduit2) | *Conduit 2* (Wii, 2011) | wiikit |
+| [**pc-castlevaniajudgment**](https://github.com/vs-sr-dev/pc-castlevaniajudgment) | *Castlevania Judgment* (Wii, 2008) | wiikit |
+| [**pc-ffcceotwii**](https://github.com/vs-sr-dev/pc-ffcceotwii) | *Final Fantasy Crystal Chronicles: Echoes of Time* (Wii, 2009) — the DS game on the Wii | wiikit |
 | [**pc-megamanxcm**](https://github.com/vs-sr-dev/pc-megamanxcm) | *Mega Man X: Command Mission* (GameCube, 2004) | wiikit |
 | [**pc-virtualhydlide**](https://github.com/vs-sr-dev/pc-virtualhydlide) | *Virtual Hydlide* (Saturn, 1995) | saturnkit, born here |
 | [**pc-xjapan**](https://github.com/vs-sr-dev/pc-xjapan) | *X JAPAN Virtual Shock 001* (Saturn, 1995) | saturnkit |
@@ -61,10 +66,16 @@ Two toolkits go further and take a **whole library** at once — every cartridge
 | [**pc-crashnburn**](https://github.com/vs-sr-dev/pc-crashnburn) | *Crash 'n Burn* (3DO, 1993) — the first 3DO code recompiled | 3dokit |
 | [**pc-doctorhauzer**](https://github.com/vs-sr-dev/pc-doctorhauzer) | *Doctor Hauzer* (3DO, 1994) | 3dokit |
 | [**pc-escapefrommonstermanor**](https://github.com/vs-sr-dev/pc-escapefrommonstermanor) | *Escape from Monster Manor* (3DO, 1993) | 3dokit |
-| [**pc-extermination**](https://github.com/vs-sr-dev/pc-extermination) | *Extermination* (PS2, 2001) | PS2Recomp and ps2kit |
+| [**pc-theneedforspeed**](https://github.com/vs-sr-dev/pc-theneedforspeed) | *The Need for Speed* (3DO, 1994) — the first one, on the machine it was made for | 3dokit |
+| [**pc-demolitionman**](https://github.com/vs-sr-dev/pc-demolitionman) | *Demolition Man* (3DO, 1994) — with the 3DO Gamegun, the mouse as the light gun | 3dokit |
+| [**pc-extermination**](https://github.com/vs-sr-dev/pc-extermination) | *Extermination* (PS2, 2001) | PS2Recomp and ps2kit, born here |
+| [**pc-dynastywarriors2**](https://github.com/vs-sr-dev/pc-dynastywarriors2) | *Dynasty Warriors 2* (PS2, 2000) | ps2kit — its own recompiler and runtime, born here |
+| [**pc-thequeenofduellist**](https://github.com/vs-sr-dev/pc-thequeenofduellist) | *The Queen of Duellist* (FM Towns, 1993) | fmtownskit, born here |
+| [**pc-4ddriving**](https://github.com/vs-sr-dev/pc-4ddriving) | *4D Driving* (FM Towns Marty, 1993) — *Stunts* on Fujitsu's console | fmtownskit |
+| [**pc-abelsmt**](https://github.com/vs-sr-dev/pc-abelsmt) | *ABEL - Shin Mokushiroku Taisen* (FM Towns, 1995) — to be translated into English | fmtownskit |
 | [**pc-mikie**](https://github.com/vs-sr-dev/pc-mikie) | Konami's *Mikie* (arcade, 1984) | its own MC6809 → C recompiler (the sound board's Z80 emulated), verified instruction by instruction against MAME |
 
-Where each one stands is at the top of its README, and in a [`.recomp.json`](https://recomp.fyi/spec) at its root that [recomp.board](https://recomp.fyi) reads.
+Where each one stands is at the top of its README, and, where the port has one, in a [`.recomp.json`](https://recomp.fyi/spec) at its root that [recomp.board](https://recomp.fyi) reads.
 
 <a name="ports"></a>
 ## 🔀 Ports to other consoles
