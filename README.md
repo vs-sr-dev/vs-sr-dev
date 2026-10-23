@@ -75,7 +75,7 @@ Two toolkits go further and take a **whole library** at once — every cartridge
 | [**pc-abelsmt**](https://github.com/vs-sr-dev/pc-abelsmt) | *ABEL - Shin Mokushiroku Taisen* (FM Towns, 1995) — to be translated into English | fmtownskit |
 | [**pc-mikie**](https://github.com/vs-sr-dev/pc-mikie) | Konami's *Mikie* (arcade, 1984) | its own MC6809 → C recompiler (the sound board's Z80 emulated), verified instruction by instruction against MAME |
 
-Where each one stands is at the top of its README, and, where the port has one, in a [`.recomp.json`](https://recomp.fyi/spec) at its root that [recomp.board](https://recomp.fyi) reads.
+Where each one stands is at the top of its README, and in a [`.recomp.json`](https://recomp.fyi/spec) at its root that [recomp.board](https://recomp.fyi) reads.
 
 <a name="ports"></a>
 ## 🔀 Ports to other consoles
