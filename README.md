@@ -183,6 +183,7 @@ Some indices were created **before** their first title, so that the first disc h
 | [**wii-thelaststory-re**](https://github.com/vs-sr-dev/wii-thelaststory-re) | *The Last Story* (Wii) and the LastWorld engine — the format notes that came before [pc-thelaststory](https://github.com/vs-sr-dev/pc-thelaststory) |
 | [**snes-rudranohihou-re**](https://github.com/vs-sr-dev/snes-rudranohihou-re) | *Rudra no Hihou* (SNES, Square) — the Japanese text system |
 | [**android-dissidiaduellum-doc**](https://github.com/vs-sr-dev/android-dissidiaduellum-doc) | *DISSIDIA FF / DISSIDIA DUELLUM* (Android) — the data directory of a live-service game, pulled off a phone and documented **while its servers still run**: 729 UnityFS archives opened and validated, 683,378 objects, and why a 2.6 GB download left 3.79 GB on disk |
+| [**apple2-wizardryiv-doc**](https://github.com/vs-sr-dev/apple2-wizardryiv-doc) | *Wizardry IV: The Return of Werdna* (Apple II, Sir-Tech, 1987) — the collection's first Apple II title: a one-megabyte directory spread over five floppies by **`SYSTEM.RELOC`**, the Huffman-coded text decoded to 424 messages, and the dungeon maps that spell D-I-N-K. Cross-linked from [pc-gamelist-doc](https://github.com/vs-sr-dev/pc-gamelist-doc) as the second *Wizardry* |
 
 ---
 
