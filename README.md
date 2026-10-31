@@ -174,6 +174,7 @@ Some indices were created **before** their first title, so that the first disc h
 | [**tales-blockcodec-doc**](https://github.com/vs-sr-dev/tales-blockcodec-doc) | **The shared *Tales* block codec** — Wolf Team's in-house LZSS, carried from the Super Famicom across every console generation since, with a reference decoder and the tests that tell shared code from a shared format |
 | [**pc-gamelist-doc**](https://github.com/vs-sr-dev/pc-gamelist-doc) | **Index of the PC and portable-C game documentation** — DOS-era format archaeology, and modern remasters where the interesting layer is the older console the build is still pretending to be |
 | [**dos-platformnotes-doc**](https://github.com/vs-sr-dev/dos-platformnotes-doc) | **A checklist for the MS-DOS-era subset** of the PC family, which as a whole has none — whether the subset has enough in common is answered by a sweep of the finished repositories, not by opinion |
+| [**apple2-gamelist-doc**](https://github.com/vs-sr-dev/apple2-gamelist-doc) | **Index of the Apple II game documentation**, created with its second title — a p-System volume spread over five floppies by `SYSTEM.RELOC`, and a DOS 3.3 disk that boots by sector address and kept what its players wrote. No shared checklist yet: the two have too little in common |
 
 ### Single-title reverse engineering
 
@@ -183,7 +184,6 @@ Some indices were created **before** their first title, so that the first disc h
 | [**wii-thelaststory-re**](https://github.com/vs-sr-dev/wii-thelaststory-re) | *The Last Story* (Wii) and the LastWorld engine — the format notes that came before [pc-thelaststory](https://github.com/vs-sr-dev/pc-thelaststory) |
 | [**snes-rudranohihou-re**](https://github.com/vs-sr-dev/snes-rudranohihou-re) | *Rudra no Hihou* (SNES, Square) — the Japanese text system |
 | [**android-dissidiaduellum-doc**](https://github.com/vs-sr-dev/android-dissidiaduellum-doc) | *DISSIDIA FF / DISSIDIA DUELLUM* (Android) — the data directory of a live-service game, pulled off a phone and documented **while its servers still run**: 729 UnityFS archives opened and validated, 683,378 objects, and why a 2.6 GB download left 3.79 GB on disk |
-| [**apple2-wizardryiv-doc**](https://github.com/vs-sr-dev/apple2-wizardryiv-doc) | *Wizardry IV: The Return of Werdna* (Apple II, Sir-Tech, 1987) — the collection's first Apple II title: a one-megabyte directory spread over five floppies by **`SYSTEM.RELOC`**, the Huffman-coded text decoded to 424 messages, and the dungeon maps that spell D-I-N-K. Cross-linked from [pc-gamelist-doc](https://github.com/vs-sr-dev/pc-gamelist-doc) as the second *Wizardry* |
 
 ---
 
