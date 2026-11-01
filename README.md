@@ -132,6 +132,7 @@ The Channel F is the constraint that best explains the appeal: a 1976 console wi
 
 | Repo | What it is |
 |---|---|
+| [**casiolator**](https://github.com/vs-sr-dev/casiolator) | Emulator for Casio's two cartridge consoles, the **PV-1000** (1983) and the **Loopy** (1995) — drop a cartridge and play: every PV-1000 game with sound, every Loopy cartridge on a clean-room SH-1, VDP and sound chip. Tools for English fan translations, starting with *Little Romance* |
 | [**undertow**](https://github.com/vs-sr-dev/undertow) | Emulator for the **ZAPiT Game Wave** (2005), the Canadian DVD-based console — runs each disc's own Lua 5.0.2 bytecode and reimplements the ZIT engine around it, MPEG-2 movies included. No firmware needed |
 | [**ecliptic**](https://github.com/vs-sr-dev/ecliptic) | Emulator for the **Tapwave Zodiac** (2003), the Palm OS 5 handheld game console — Tapwave Native Applications on Unicorn, the 612-entry `TwGlue` OS table on the host. To our knowledge the first for the device |
 | [**flick**](https://github.com/vs-sr-dev/flick) | Emulator for the **Mattel HyperScan** (2006), the Sunplus SPG290 console that reads game discs and RFID trading cards — all five retail games with sound, cards and two players, every step checked against MAME's instruction traces. Windows and Linux; it runs [hs-lba](https://github.com/vs-sr-dev/hs-lba) too |
