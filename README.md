@@ -121,6 +121,7 @@ Original software, written from scratch for the target hardware.
 |---|---|---|
 | [**fcf-quest**](https://github.com/vs-sr-dev/fcf-quest) | Fairchild Channel F (1976) | A JRPG in 4 KiB of cartridge and **64 bytes of RAM**, F8 assembly |
 | [**fcf-bufo**](https://github.com/vs-sr-dev/fcf-bufo) | Fairchild Channel F (1976) | *BUFO*, a road-and-river crossing game in 2 KiB, F8 assembly |
+| [**cdinet**](https://github.com/vs-sr-dev/cdinet) | Philips CD-i (1991) | A web browser in the spirit of Philips' lost **CD-Online / Web-i** — text, links, search and pictures over the player's serial port at 19200 baud, a proxy doing TLS and HTML. Ultra C on the 68070; pictures LZSS-packed and drawn line by line as they arrive. Runs in [cdipc](https://github.com/vs-sr-dev/cdipc) through its `--serial` port, not yet tried on real hardware |
 | [**vis-synth**](https://github.com/vs-sr-dev/vis-synth) | Tandy/Memorex VIS (1992) | OPL3 polyphonic synth — pad instrument, SMF player, live MIDI from host hardware over a custom MAME bridge |
 | [**vis-fileviewer**](https://github.com/vs-sr-dev/vis-fileviewer) | Tandy/Memorex VIS (1992) | Media browser for photos, OPL3 audio and FLC video, the native Modular Windows way on an 80286 |
 | [**wiiu-crema**](https://github.com/vs-sr-dev/wiiu-crema) | Wii U | *Crema* — a clean-room GX2/AX engine, benchmarked on real silicon |
