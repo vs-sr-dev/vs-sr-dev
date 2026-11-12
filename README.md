@@ -32,7 +32,7 @@ The work that every game on a console shares — its discs or cartridges, its CP
 | [**ps2kit**](https://github.com/vs-sr-dev/ps2kit) | PlayStation 2 | EE → C++ recompiler; the EE kernel, the IOP (its own modules run unchanged), the SPU2, the IPU, VIF and both VUs, the GS |
 | [**fmtownskit**](https://github.com/vs-sr-dev/fmtownskit) | FM Towns and FM Towns Marty | 386 → C++ recompiler; RUN386 and its Phar Lap executables, DOS, the TBIOS (from the disc, its modules laid out as at boot), the CD BIOS, the sprite controller, the RF5C68 and YM3438 sound, the pad and the mouse — one kit for both machines |
 
-Four toolkits go further and take a **whole library** at once — every cartridge recompiled, built, and run frame for frame identical to the interpreter:
+Five toolkits go further and take a **whole library** at once — every cartridge recompiled, built, and run frame for frame identical to the interpreter:
 
 | Toolkit | Console | What it does |
 |---|---|---|
@@ -40,6 +40,7 @@ Four toolkits go further and take a **whole library** at once — every cartridg
 | [**7800kit**](https://github.com/vs-sr-dev/7800kit) | Atari 7800 (1986) | NMOS 6502 → C++ recompiler grown out of watarakit's, six mappers, MARIA, the TIA and the POKEY — all 135 good dumps of the set |
 | [**tg16kit**](https://github.com/vs-sr-dev/tg16kit) | PC Engine / TurboGrafx-16 (1987) | HuC6280 → C++ recompiler grown out of 7800kit's, keyed by the MMU's mapping; the VDC with its raster interrupts, the SuperGrafx's second VDC, the VCE and the PSG — all 423 HuCards in MAME's lists |
 | [**wskit**](https://github.com/vs-sr-dev/wskit) | WonderSwan / WonderSwan Color (1999) | V30MZ → C++ recompiler grown out of tg16kit's, keyed by code segment and bank, MAME's prefetch queue included; the display, sound, DMA and save memory of both models — all 205 cartridges of MAME's lists in the set (one stays identical until it crashes, in both) |
+| [**gbkit**](https://github.com/vs-sr-dev/gbkit) | Game Boy / Game Boy Color (1989) | SM83 → C++ recompiler grown out of wskit's, keyed by ROM window and bank; MAME's timing to the memory access, the mappers and the MBC3's clock, the LCD, the CGB's palettes, HDMA and double speed, the sound — all 663 cartridges of MAME's lists in the set, one machine for both models |
 
 ### Ports
 
