@@ -2,7 +2,7 @@
 
 Homebrew, ports and preservation research for **obscure and failed vintage platforms** — the machines that flopped, got cancelled, or were never documented, and so have almost no public technical record — and native PC ports of console games that never left their console.
 
-The goal is concrete: take technical knowledge that exists nowhere else — compiler bugs, hardware register maps, undocumented file formats, emulator internals — and make it **publicly verifiable** for the people who come after. For several of these platforms, these repositories are the only public documentation of their kind.
+The goal is concrete: take technical knowledge that exists nowhere else — compiler bugs, hardware register maps, undocumented file formats, emulator internals — and make it **publicly verifiable** for the people who come after. For several of these platforms, these repositories were, at the time of publication and to the best of our knowledge, the only public documentation of their kind.
 
 All of it is passion work, done in my spare time and on a schedule of my own, and there are more projects than hours to follow them all. Everything published here got far enough to be worth publishing, so none of it is abandoned, only waiting its turn. If you'd like to see something continued, or started, [open an issue](https://github.com/vs-sr-dev/vs-sr-dev/issues), here or on the repository itself: even a one-line "I'd like to see this go on" is enough to move it up the list.
 
