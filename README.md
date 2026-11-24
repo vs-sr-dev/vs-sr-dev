@@ -100,6 +100,7 @@ Games built from their released source for hardware they were never meant to run
 | [**3do-omf2097**](https://github.com/vs-sr-dev/3do-omf2097) | Panasonic 3DO | *One Must Fall: 2097*, built on OpenOMF |
 | [**coleco-ff**](https://github.com/vs-sr-dev/coleco-ff) | ColecoVision | *Final Fantasy* (NES, 1987) rewritten in C, on the Super Game Module and a 512 KB MegaCart |
 | [**wiiu-planetblupi**](https://github.com/vs-sr-dev/wiiu-planetblupi) | Wii U | *Planet Blupi* (Epsitec) — GamePad touch as mouse, runs on Aroma |
+| [**jag-skyroads**](https://github.com/vs-sr-dev/jag-skyroads) | Atari Jaguar | *SkyRoads* (Bluemoon, 1993) on skyroads-port's reimplementation, intro and menus transcribed from the original program — road on the GPU, the AdLib music synthesised on the DSP, saves in the cartridge EEPROM |
 
 <a name="reimpl"></a>
 ## 🛠️ Native reimplementations
