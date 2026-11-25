@@ -84,7 +84,7 @@ Where each one stands is at the top of its README, and in a [`.recomp.json`](htt
 <a name="ports"></a>
 ## 🔀 Ports to other consoles
 
-Games built from their released source for hardware they were never meant to run on.
+Games brought to hardware they were never meant to run on — from their released source, from open reimplementations, or from the game's own data on an engine rebuilt for the target.
 
 | Repo | Target | Source |
 |---|---|---|
