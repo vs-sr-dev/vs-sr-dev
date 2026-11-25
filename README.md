@@ -101,6 +101,7 @@ Games built from their released source for hardware they were never meant to run
 | [**coleco-ff**](https://github.com/vs-sr-dev/coleco-ff) | ColecoVision | *Final Fantasy* (NES, 1987) rewritten in C, on the Super Game Module and a 512 KB MegaCart |
 | [**wiiu-planetblupi**](https://github.com/vs-sr-dev/wiiu-planetblupi) | Wii U | *Planet Blupi* (Epsitec) — GamePad touch as mouse, runs on Aroma |
 | [**jag-skyroads**](https://github.com/vs-sr-dev/jag-skyroads) | Atari Jaguar | *SkyRoads* (Bluemoon, 1993) on skyroads-port's reimplementation, intro and menus transcribed from the original program — road on the GPU, the AdLib music synthesised on the DSP, saves in the cartridge EEPROM |
+| [**jag-monkeyisland**](https://github.com/vs-sr-dev/jag-monkeyisland) | Atari Jaguar | *The Secret of Monkey Island* (Lucasfilm Games, 1990), the DOS VGA floppy release — the game's own data on a SCUMM v4 interpreter transcribed from ScummVM and checked against it line by line and pixel by pixel; rooms, costumes and text on the GPU and Blitter, the original AdLib music synthesised on the DSP, saves on the GameDrive's SD card. Played from the Dial-A-Pirate wheel to the end credits on real hardware |
 
 <a name="reimpl"></a>
 ## 🛠️ Native reimplementations
